@@ -12,7 +12,7 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		if (!empty($this->session->userdata('user_id'))) 
+		if ($this->user->user_id()) 
 		{
 			$this->load->view('v_dashboard');
 			
@@ -23,6 +23,12 @@ class Dashboard extends CI_Controller {
 		
 	}
 
+	function logout()
+	{
+		$this->session->sess_destroy();
+		redirect(base_url('login'));
+
+	}
 }
 
 /* End of file Dashboard.php */

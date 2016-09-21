@@ -25,27 +25,27 @@ class User extends CI_Model {
 
 	function user_id()
 	{
-		$this->session->userdata('user_id');
+		return $this->session->userdata('user_id');
 	}
 
 	function name()
 	{
-		$this->session->userdata('name');
+		return $this->session->userdata('name');
 	}
 
 	function username()
 	{
-		$this->session->userdata('username');
+		return $this->session->userdata('username');
 	}
 
 	function password()
 	{
-		$this->session->userdata('password');
+		return $this->session->userdata('password');
 	}
 
 	function email()
 	{
-		$this->session->userdata('email');
+		return $this->session->userdata('email');
 	}
 
 	function logout()

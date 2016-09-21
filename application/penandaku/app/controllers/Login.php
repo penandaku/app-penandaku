@@ -16,7 +16,7 @@ class Login extends CI_Controller {
 	public function index()
 	{	
 		//jika session sudah terdaftar 
-		if (!empty($this->session->userdata('user_id'))) {
+		if ($this->user->user_id()) {
 			//dialihkan ke dashboad
 			redirect('dashboard');
 			
