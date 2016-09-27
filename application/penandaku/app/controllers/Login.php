@@ -22,7 +22,6 @@ class Login extends CI_Controller {
 			
 		}else{
 			
-
 			//form validation
 			$this->form_validation->set_rules('username', 'Username', 'required');
 			$this->form_validation->set_rules('password', 'Password', 'required');
@@ -39,9 +38,6 @@ class Login extends CI_Controller {
 				//get form 
 				$username = $this->input->post('username', TRUE);
 				$password = SHA1(MD5(MD5(SHA1($this->input->post('password', TRUE)))));
-				/*print_r($username);
-				print_r($password);
-				exit(); */
 				
 				//check data dari model
 				$check = $this->user->login('tbl_user', array('username' => $username), array('password' => $password));
@@ -56,11 +52,7 @@ class Login extends CI_Controller {
                   			'name'      => $user->nama_user,
                   			'email'		=> $user->email
               				));
-
-						//print_r($_SESSION['user_id']);
-						//exit();	
               			}
-
 
               			redirect('dashboard');
               			
@@ -72,10 +64,10 @@ class Login extends CI_Controller {
 					}
 
 			}else{
+				
 				$data = array('title' => 'Login &rsaquo; Penandaku');
 				$this->load->view('v_login', $data);
 
-				
 			}			
 						
 		}

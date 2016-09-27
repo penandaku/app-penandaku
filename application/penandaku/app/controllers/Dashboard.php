@@ -14,13 +14,27 @@ class Dashboard extends CI_Controller {
 	{
 		if ($this->user->user_id()) 
 		{
-			$this->load->view('v_dashboard');
+			$this->load->view('part/header');
+			$this->load->view('part/sidebar');
+			$this->load->view('part/navbar');
+			$this->load->view('layout/v_dashboard');
+			$this->load->view('part/footer');
 			
 		}else{
+
 			redirect('login');
 		}
 		
 		
+	}
+
+	public function list_member()
+	{
+		$this->load->view('part/header');
+		$this->load->view('part/sidebar');
+		$this->load->view('part/navbar');
+		$this->load->view('layout/v_dashboard');
+		$this->load->view('part/footer');
 	}
 
 	function logout()
