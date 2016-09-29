@@ -20,7 +20,7 @@
                         <p>User Profile</p>
                     </a>
                 </li>
-                <li <?php if(isset($data_trace)){ echo 'class="active"'; }?>>
+                <li <?php if(isset($member)){ echo 'class="active"'; }?>>
                     <a href="<?php echo base_url(); ?>dashboard/list_member">
                         <i class="pe-7s-server"></i>
                         <p>Data Member</p>

@@ -23,6 +23,12 @@ class User extends CI_Model {
 		}
 	}
 
+	function list_member()
+	{
+		$member = $this->db->get('tbl_member');
+		return $member ;
+	}
+
 	function user_id()
 	{
 		return $this->session->userdata('user_id');
@@ -50,7 +56,7 @@ class User extends CI_Model {
 
 	function logout()
 	{
-		$this->session->session_destroy();
+		$this->session->sess_destroy();
 	}
 }
 

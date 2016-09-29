@@ -57,3 +57,4 @@ $route['login'] = 'app/login';
 $route['dashboard'] = 'app/dashboard';
 $route['dashboard/logout'] = 'app/dashboard/logout';
 $route['dashboard/list_member'] = 'app/dashboard/list_member';
+$route['dashboard/profile'] = 'app/dashboard/profile';

@@ -14,7 +14,10 @@ class Dashboard extends CI_Controller {
 	{
 		if ($this->user->user_id()) 
 		{
-			$this->load->view('part/header');
+			$data = array ('title' => ' <i class="pe-7s-graph"></i> Dashboard',
+				'dashboard' => TRUE
+				);
+			$this->load->view('part/header', $data);
 			$this->load->view('part/sidebar');
 			$this->load->view('part/navbar');
 			$this->load->view('layout/v_dashboard');
@@ -30,16 +33,31 @@ class Dashboard extends CI_Controller {
 
 	public function list_member()
 	{
-		$this->load->view('part/header');
+		$data = array ( 'title' => '<i class="pe-7s-server"></i> Data Member',
+			'member' => TRUE
+			);
+		$this->load->view('part/header',$data);
 		$this->load->view('part/sidebar');
 		$this->load->view('part/navbar');
-		$this->load->view('layout/v_dashboard');
+		$this->load->view('layout/v_listmember');
+		$this->load->view('part/footer');
+	}
+
+	public function profile()
+	{
+		$data = array ( 'title' => '<i class="pe-7s-user"></i> Profile',
+			'profile' => TRUE
+			);
+		$this->load->view('part/header', $data);
+		$this->load->view('part/sidebar');
+		$this->load->view('part/navbar');
+		$this->load->view('layout/v_profile');
 		$this->load->view('part/footer');
 	}
 
 	function logout()
 	{
-		$this->session->sess_destroy();
+		$this->user->logout();
 		redirect(base_url('login'));
 
 	}
