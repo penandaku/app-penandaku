@@ -1,4 +1,3 @@
-    </script>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -6,7 +5,8 @@
 				      <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-user"></i> Profile</div>
 				      <div class="panel-body">                
                     	<div id="chart-pie">
-                    	</div>
+                        
+                       	</div>
                       </div>
                     </div>              
                 </div>
